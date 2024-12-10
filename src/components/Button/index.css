@@ -1,20 +1,136 @@
 .my-button {
     background-color: black;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif; 
     color: aliceblue;
     border: none;
     border-radius: 15px;
     cursor: pointer;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative; 
+    overflow: hidden; 
+}
+.my-button--sm {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+}
+
+.my-button--md {
     width: 150px;
     height: 50px;
-    font-size: 16;
+    font-size: 16px;
 }
-.my-button--primary{
-    color: aqua;
-    background-color: firebrick;
+
+.my-button--lg {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
 }
+.my-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: scale(0);
+}
+
+.my-button:active::after {
+    opacity: 1;
+    transform: scale(2); 
+}
+
+.my-button--primary {
+    background: linear-gradient(45deg, firebrick, orange);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5);
+}
+
+.my-button--primary:hover {
+    background: linear-gradient(45deg, orange, firebrick);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.7);
+}
+
 .my-button--bordered {
-    background-color: none;
+    background-color: white;
     color: black;
-    border: 1px solid;
+    border: 1px solid black;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.my-button--bordered:hover {
+    background-color: blue;
+    color: aliceblue;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+    transform: rotate(3deg);
+}
+
+.my-button--glow {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    box-shadow: 0 0 15px rgba(101, 88, 233, 0.7), 0 0 30px rgba(101, 88, 233, 0.5);
+}
+
+.my-button--glow:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+    box-shadow: 0 0 20px rgba(101, 88, 233, 1), 0 0 40px rgba(101, 88, 233, 0.8);
+    transform: scale(1.1);
+}
+.my-div {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff6f61, #ff9671);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.my-div:hover {
+    transform: scale(1.1) rotate(5deg); /* Увеличение и вращение */
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.7);
+}
+
+.my-div::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.6s, transform 0.6s;
+    transform: scale(0);
+    z-index: 0;
+}
+
+.my-div:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.my-div span {
+    position: relative;
+    z-index: 1; 
 }
