@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Heading from "./components/Heading";
 import { Button } from "./components/Button";
-import { Accordion } from "./components/Accordion";
+import Accordion from './components/Accordion';
 import Input from "./components/Input";
 import Tooltip from "./components/Tooltip";
 import Typography from "./components/Typography";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(""); // State for the input field value
+  const [blueValue, setBlueValue] = useState(""); // State for the blue input field value
 
   return (
     <div style={{ padding: "20px" }}>
@@ -18,9 +19,6 @@ function App() {
 
       {/* Кнопки */}
       <div style={{ margin: "20px 0" }}>
-        <Heading level={2} color="black" align="left">
-          Button component
-        </Heading>
         <Button size="sm" variant="primary"> Button</Button>
         <Button size="md" variant="primary"> Button</Button>
         <Button size="lg" variant="primary"> Button</Button>
@@ -31,35 +29,68 @@ function App() {
         <Button size="lg" variant="bordered"> Button</Button>
       </div>
 
-      {/* Поле ввода с подсказкой */}
-      <div style={{ margin: "20px 0" }}>
-        <Tooltip text="Enter your name" position="top">
-          <Input
-            placeholder="Your name"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            style={{ width: "300px" }}
-          />
-        </Tooltip>
+      <div style={{ padding: "20px" }}>
+        <Input
+          label="Name"
+          placeholder="Enter your name"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <Input 
+          type="text" 
+          placeholder="Enter your name" 
+          value={blueValue} 
+          onChange={(e) => setBlueValue(e.target.value)} 
+          label="Name"
+          blue={true}
+        />
+        <Input
+          label="Name"
+          placeholder="Enter your name"
+          value={inputValue}
+          danger={true}
+        />
+
       </div>
 
-      {/* Типографика */}
-      <Typography variant="body">
-        Tooltip appears when you hover over the input field. Enter your name to see it in action.
-      </Typography>
+      <div style={{ padding: "20px", width: "550px" }}>
+        <Typography textSize="sm">
+          SM. Our mission is to redefine the model of learning and re-engineer its process by providing innovative administrative and instructional technologies. Click here for our beliefs. If you are a school administrator and would like to use ecourse.org for your classes, please create school profiles. Instructors and students may signup independent user account. For questions, contact us.
+        </Typography>
+
+        <Typography textSize="md">
+          MD. Our mission is to redefine the model of learning and re-engineer its process by providing innovative administrative and instructional technologies. Click here for our beliefs. If you are a school administrator and would like to use ecourse.org for your classes, please create school profiles. Instructors and students may signup independent user account. For questions, contact us.
+        </Typography>
+
+        <Typography textSize="lg">
+          LG. Our mission is to redefine the model of learning and re-engineer its process by providing innovative administrative and instructional technologies. Click here for our beliefs. If you are a school administrator and would like to use ecourse.org for your classes, please create school profiles. Instructors and students may signup independent user account. For questions, contact us.
+        </Typography>
+      </div>
+
+      {/* Хеадинг */}
+      <div style={{ padding: "20px" }}>
+        <Heading level={1}>Heading 1</Heading>
+        <Heading level={2}>Heading 2</Heading>
+        <Heading level={3}>Heading 3</Heading>
+        <Heading level={4}>Heading 4</Heading>
+        <Heading level={5}>Heading 5</Heading>
+        <Heading level={6}>Heading 6</Heading>
+      </div>
+
+      <div className="tooltip-container">
+        <Tooltip text="Tooltip text" position="top">Top Tooltip</Tooltip>
+        <Tooltip text="Tooltip text" position="left">Left Tooltip</Tooltip>
+        <Tooltip text="Tooltip text" position="right">Right Tooltip</Tooltip>
+        <Tooltip text="Tooltip text" position="bottom">Bottom Tooltip</Tooltip>
+      </div>
 
       {/* Аккордеон */}
-      <div style={{ marginTop: "20px" }}>
-        <Accordion title="Section 1">
-          <p>Content for section 1. This section can contain any content.</p>
-        </Accordion>
-        <Accordion title="Section 2">
-          <p>Content for section 2. You can expand or collapse this section.</p>
-        </Accordion>
-        <Accordion title="Section 3">
-          <p>Content for section 3. Use this component to organize content neatly.</p>
-        </Accordion>
-      </div>
+      <Accordion title="Accordion 1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </Accordion>
+      <Accordion title="Accordion 2" defaultOpen>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </Accordion>
     </div>
   );
 }

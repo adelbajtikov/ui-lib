@@ -1,0 +1,21 @@
+.typography-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-indent: 20px; 
+    margin-bottom: 10px;
+  }
+  
+  .typography-md {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-indent: 20px; 
+    margin-bottom: 15px;
+  }
+  
+  .typography-lg {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    text-indent: 20px; 
+    margin-bottom: 20px;
+  }
+  

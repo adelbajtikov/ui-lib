@@ -1,22 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Heading = ({ level = 1, color = "#333", align = "left", children }) => {
-  const Tag = `h${level}`; // Выбирает тег заголовка h1, h2, ..., h6
+const Heading = ({ level = 1, className = "", children }) => {
+  const HeadingTag = `h${level}`; // Dynamically select heading level
 
-  return (
-    <Tag
-      style={{
-        color: color,
-        textAlign: align,
-        margin: "10px 0",
-        fontFamily: "Arial, sans-serif",
-        fontWeight: "bold",
-        textTransform: "capitalize",
-      }}
-    >
-      {children}
-    </Tag>
-  );
+  return <HeadingTag className={className}>{children}</HeadingTag>;
+};
+
+Heading.propTypes = {
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default Heading;

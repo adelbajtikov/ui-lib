@@ -1,31 +1,13 @@
-import React, { useState } from "react";
+import React from 'react';
+import './styles.css';
 
-const Tooltip = ({ children, text, position = "top" }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const tooltipStyles = {
-    position: "absolute",
-    backgroundColor: "#333",
-    color: "#fff",
-    padding: "5px 10px",
-    borderRadius: "4px",
-    fontSize: "12px",
-    whiteSpace: "nowrap",
-    zIndex: 10,
-    [position]: "100%",
-    transform: position === "top" ? "translateY(-100%)" : "none",
-  };
-
+function Tooltip({ text, position, children }) {
   return (
-    <div
-      style={{ position: "relative", display: "inline-block", cursor: "pointer" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="tooltip-wrapper">
       {children}
-      {isHovered && <div style={tooltipStyles}>{text}</div>}
+      <div className={`tooltip-box tooltip-${position}`}>{text}</div>
     </div>
   );
-};
+}
 
 export default Tooltip;

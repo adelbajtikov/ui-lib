@@ -1,32 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import './Accordion.css';
 
-const Accordion = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
+function Accordion({ title, children, defaultOpen = false }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div style={{ marginBottom: "10px", border: "1px solid #ddd", borderRadius: "4px" }}>
-      <div
-        onClick={toggleAccordion}
-        style={{
-          padding: "10px",
-          cursor: "pointer",
-          backgroundColor: "#f7f7f7",
-          fontWeight: "bold",
-        }}
-      >
-        {title}
+    <div className="accordion">
+      <div className="accordion-header" onClick={() => setIsOpen(!isOpen)}>
+        <span>{title}</span>
+        <span className="accordion-icon">{isOpen ? '-' : '+'}</span>
       </div>
-      {isOpen && (
-        <div style={{ padding: "10px", backgroundColor: "#fff" }}>
-          {children}
-        </div>
-      )}
+      {isOpen && <div className="accordion-content">{children}</div>}
     </div>
   );
-};
+}
 
-export { Accordion };
+export default Accordion;

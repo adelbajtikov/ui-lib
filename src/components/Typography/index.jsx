@@ -1,15 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "./Typography.css"; // Add a CSS file for consistent styles
 
-const Typography = ({ variant = "body", color = "#333", children }) => {
-  const styles = {
-    h1: { fontSize: "2.5rem", fontWeight: "bold", margin: "10px 0" },
-    h2: { fontSize: "2rem", fontWeight: "bold", margin: "10px 0" },
-    h3: { fontSize: "1.75rem", fontWeight: "bold", margin: "10px 0" },
-    body: { fontSize: "1rem", margin: "10px 0" },
-    caption: { fontSize: "0.85rem", color: "#666" },
-  };
+const Typography = ({ textSize = "md", className = "", children }) => {
+  const textSizeClass = `typography-${textSize}`;
 
-  return <div style={{ ...styles[variant], color }}>{children}</div>;
+  return <p className={`${textSizeClass} ${className}`}>{children}</p>;
+};
+
+Typography.propTypes = {
+  textSize: PropTypes.oneOf(["sm", "md", "lg"]),
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 export default Typography;
