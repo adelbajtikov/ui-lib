@@ -12,6 +12,7 @@
     transition: all 0.3s ease;
     position: relative; 
     overflow: hidden; 
+    margin-left: 20px;
 }
 .my-button--sm {
     width: 100px;
@@ -49,42 +50,29 @@
 }
 
 .my-button--primary {
-    background: linear-gradient(45deg, firebrick, orange);
+    background: #0377fc;
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5);
 }
 
 .my-button--primary:hover {
-    background: linear-gradient(45deg, orange, firebrick);
     transform: translateY(-2px); 
-    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.7);
+    box-shadow: 0 8px 20px #0377fc;
 }
 
 .my-button--bordered {
     background-color: white;
-    color: black;
-    border: 1px solid black;
-    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
+    color: #0377fc;
+    border: 1px solid blue;
+    box-shadow: inset 0 0 0 0 #0377fc;
 }
 
 .my-button--bordered:hover {
     background-color: blue;
     color: aliceblue;
     box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
-    transform: rotate(3deg);
 }
 
-.my-button--glow {
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-    color: white;
-    box-shadow: 0 0 15px rgba(101, 88, 233, 0.7), 0 0 30px rgba(101, 88, 233, 0.5);
-}
 
-.my-button--glow:hover {
-    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
-    box-shadow: 0 0 20px rgba(101, 88, 233, 1), 0 0 40px rgba(101, 88, 233, 0.8);
-    transform: scale(1.1);
-}
 .my-div {
     width: 200px;
     height: 200px;

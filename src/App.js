@@ -15,15 +15,20 @@ function App() {
       <Heading level={1} color="#007bff" align="center">
         Welcome to My App
       </Heading>
-      <Heading level={2} color="#ff5722" align="left">
-        Explore the Features
-      </Heading>
 
       {/* Кнопки */}
       <div style={{ margin: "20px 0" }}>
-        <Button size="sm" variant="primary">Small Button</Button>
-        <Button size="md" variant="bordered">Medium Button</Button>
-        <Button size="lg" variant="primary">Large Button</Button>
+        <Heading level={2} color="black" align="left">
+          Button component
+        </Heading>
+        <Button size="sm" variant="primary"> Button</Button>
+        <Button size="md" variant="primary"> Button</Button>
+        <Button size="lg" variant="primary"> Button</Button>
+      </div>
+      <div style={{ margin: "20px 0" }}>
+        <Button size="sm" variant="bordered"> Button</Button>
+        <Button size="md" variant="bordered"> Button</Button>
+        <Button size="lg" variant="bordered"> Button</Button>
       </div>
 
       {/* Поле ввода с подсказкой */}
