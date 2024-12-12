@@ -7,9 +7,9 @@ import Tooltip from "./components/Tooltip";
 import Typography from "./components/Typography";
 
 function App() {
-  const [inputValue, setInputValue] = useState(""); // State for the input field value
-  const [blueValue, setBlueValue] = useState(""); // State for the blue input field value
-
+  const [inputValue, setInputValue] = useState(""); 
+  const [blueValue, setBlueValue] = useState(""); 
+  const [dangerValue, setDangerValue] = useState(""); 
   return (
     <div style={{ padding: "20px" }}>
       {/* Заголовок */}
@@ -47,10 +47,10 @@ function App() {
         <Input
           label="Name"
           placeholder="Enter your name"
-          value={inputValue}
+          value={dangerValue} 
+          onChange={(e) => setDangerValue(e.target.value)}  
           danger={true}
         />
-
       </div>
 
       <div style={{ padding: "20px", width: "550px" }}>

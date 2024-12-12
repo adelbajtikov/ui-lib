@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Heading = ({ level = 1, className = "", children }) => {
-  const HeadingTag = `h${level}`; // Dynamically select heading level
+  const HeadingTag = `h${level}`;
 
   return <HeadingTag className={className}>{children}</HeadingTag>;
 };

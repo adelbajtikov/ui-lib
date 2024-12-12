@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Input.css"; // Add a CSS file for styles
+import "./Input.css"; 
 
 const Input = ({
   type = "text",
@@ -10,7 +10,7 @@ const Input = ({
   disabled = false,
   label,
   danger = false,
-  blue = false,  // Добавляем новый пропс для синего инпута
+  blue = false,  
 }) => {
   return (
     <div className={`input-wrapper ${danger ? "danger" : ""} ${blue ? "blue" : ""}`}>
@@ -35,7 +35,7 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   label: PropTypes.string,
   danger: PropTypes.bool,
-  blue: PropTypes.bool,  // Добавляем новый пропс
+  blue: PropTypes.bool,  
 };
 
 export default Input;
